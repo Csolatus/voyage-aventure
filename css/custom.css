@@ -72,6 +72,20 @@
 }
 
 /* ========== À propos (A) — max 50 lignes ========== */
+.bg-dark-alt {
+    background-color: var(--va-dark-alt);
+}
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 0.2rem;
+    left: calc(-1.5rem - 9px);
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: var(--va-primary);
+}
 
 /* ========== Destinations (B) — max 50 lignes ========== */
 
