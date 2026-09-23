@@ -48,12 +48,46 @@
 }
 
 /* ========== Commun : header (A) ========== */
+.navbar .nav-link {
+    padding-inline: 1rem;
+    border-radius: var(--bs-border-radius);
+    transition: background-color 0.3s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background-color: var(--va-dark-alt);
+}
 
 /* ========== Commun : footer (B) ========== */
 
 /* ========== Accueil (A) — max 50 lignes ========== */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.service-card {
+    border-color: transparent;
+    transition: border-color 0.3s, transform 0.3s;
+}
+.service-card:hover {
+    border-color: var(--va-primary);
+    transform: translateY(-5px);
+}
 
 /* ========== À propos (A) — max 50 lignes ========== */
+.bg-dark-alt {
+    background-color: var(--va-dark-alt);
+}
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 0.2rem;
+    left: calc(-1.5rem - 9px);
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background-color: var(--va-primary);
+}
 
 /* ========== Destinations (B) — max 50 lignes ========== */
 

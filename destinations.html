@@ -11,18 +11,24 @@
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <h1 class="logo">🌍 VoyageAventure</h1>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
-                    <li><a href="apropos.html" class="nav-link">À propos</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand fs-3 fw-bold" href="index.html">🌍 VoyageAventure</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-principale"
+                        aria-controls="navbar-principale" aria-expanded="false" aria-label="Afficher la navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-principale">
+                    <ul class="navbar-nav ms-auto gap-md-3 mt-3 mt-md-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="destinations.html">Destinations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="apropos.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <section class="page-header">
