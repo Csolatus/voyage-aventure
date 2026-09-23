@@ -90,5 +90,11 @@
 }
 
 /* ========== Destinations (B) — max 50 lignes ========== */
+.destination-card {
+    transition: transform 0.3s;
+}
+.destination-card:hover {
+    transform: translateY(-5px);
+}
 
 /* ========== Contact (B) — max 50 lignes ========== */
