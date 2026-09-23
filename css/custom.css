@@ -60,23 +60,33 @@
 
 /* ========== Commun : footer (B) ========== */
 
+/* ========== Commun : bandeaux de page (À propos, Destinations, Contact) ========== */
+.bg-dark-alt {
+    background-color: var(--va-dark-alt);
+}
+
+/* ========== Commun : cartes animées au survol (Accueil, Destinations) ========== */
+.service-card,
+.destination-card {
+    transition: border-color 0.3s, transform 0.3s;
+}
+.service-card:hover,
+.destination-card:hover {
+    transform: translateY(-5px);
+}
+
 /* ========== Accueil (A) — max 50 lignes ========== */
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 .service-card {
     border-color: transparent;
-    transition: border-color 0.3s, transform 0.3s;
 }
 .service-card:hover {
     border-color: var(--va-primary);
-    transform: translateY(-5px);
 }
 
 /* ========== À propos (A) — max 50 lignes ========== */
-.bg-dark-alt {
-    background-color: var(--va-dark-alt);
-}
 .timeline-item::before {
     content: "";
     position: absolute;
@@ -90,11 +100,5 @@
 }
 
 /* ========== Destinations (B) — max 50 lignes ========== */
-.destination-card {
-    transition: transform 0.3s;
-}
-.destination-card:hover {
-    transform: translateY(-5px);
-}
 
 /* ========== Contact (B) — max 50 lignes ========== */
