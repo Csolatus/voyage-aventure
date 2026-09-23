@@ -1,6 +1,8 @@
 # voyage-aventure
 projet scolaire
 
+Documentation de la migration vers Bootstrap : [docs/migration.md](docs/migration.md)
+
 ## Conventions de l'équipe
 
 ### Bootstrap
