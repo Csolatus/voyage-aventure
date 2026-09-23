@@ -1,27 +1,28 @@
 /* ========== Variables (palette VoyageAventure) ========== */
+/* Couleurs assombries pour un contraste d'au moins 4.5:1 avec le blanc (WCAG AA) */
 :root {
     --va-dark: #2c3e50;
     --va-dark-alt: #34495e;
-    --va-primary: #3498db;
-    --va-primary-hover: #2980b9;
-    --va-danger: #e74c3c;
-    --va-danger-hover: #c0392b;
-    --va-success: #27ae60;
-    --va-success-hover: #219a52;
+    --va-primary: #2077b2;
+    --va-primary-hover: #1c679b;
+    --va-danger: #da2d1b;
+    --va-danger-hover: #be2718;
+    --va-success: #1d8248;
+    --va-success-hover: #19713f;
 
     /* Surcharge Bootstrap : utilitaires text-*, bg-*, border-*, liens */
     --bs-primary: var(--va-primary);
-    --bs-primary-rgb: 52, 152, 219;
+    --bs-primary-rgb: 32, 119, 178;
     --bs-danger: var(--va-danger);
-    --bs-danger-rgb: 231, 76, 60;
+    --bs-danger-rgb: 218, 45, 27;
     --bs-success: var(--va-success);
-    --bs-success-rgb: 39, 174, 96;
+    --bs-success-rgb: 29, 130, 72;
     --bs-dark: var(--va-dark);
     --bs-dark-rgb: 44, 62, 80;
     --bs-link-color: var(--va-primary);
-    --bs-link-color-rgb: 52, 152, 219;
+    --bs-link-color-rgb: 32, 119, 178;
     --bs-link-hover-color: var(--va-primary-hover);
-    --bs-link-hover-color-rgb: 41, 128, 185;
+    --bs-link-hover-color-rgb: 28, 103, 155;
 }
 
 /* Surcharge Bootstrap : boutons (couleurs compilées, non liées à --bs-primary) */
@@ -33,9 +34,9 @@
     --bs-btn-active-bg: var(--bs-btn-hover-bg);
     --bs-btn-active-border-color: var(--bs-btn-hover-bg);
 }
-.btn-primary { --bs-btn-bg: var(--va-primary); --bs-btn-hover-bg: var(--va-primary-hover); --bs-btn-focus-shadow-rgb: 52, 152, 219; }
-.btn-danger { --bs-btn-bg: var(--va-danger); --bs-btn-hover-bg: var(--va-danger-hover); --bs-btn-focus-shadow-rgb: 231, 76, 60; }
-.btn-success { --bs-btn-bg: var(--va-success); --bs-btn-hover-bg: var(--va-success-hover); --bs-btn-focus-shadow-rgb: 39, 174, 96; }
+.btn-primary { --bs-btn-bg: var(--va-primary); --bs-btn-hover-bg: var(--va-primary-hover); --bs-btn-focus-shadow-rgb: 32, 119, 178; }
+.btn-danger { --bs-btn-bg: var(--va-danger); --bs-btn-hover-bg: var(--va-danger-hover); --bs-btn-focus-shadow-rgb: 218, 45, 27; }
+.btn-success { --bs-btn-bg: var(--va-success); --bs-btn-hover-bg: var(--va-success-hover); --bs-btn-focus-shadow-rgb: 29, 130, 72; }
 
 .btn-outline-primary {
     --bs-btn-color: var(--va-primary);
@@ -44,7 +45,12 @@
     --bs-btn-hover-border-color: var(--va-primary);
     --bs-btn-active-bg: var(--va-primary);
     --bs-btn-active-border-color: var(--va-primary);
-    --bs-btn-focus-shadow-rgb: 52, 152, 219;
+    --bs-btn-focus-shadow-rgb: 32, 119, 178;
+}
+
+/* Sur fond sombre, le bleu d'origine (plus clair) reste lisible : 3.5:1 sur --va-dark */
+.bg-dark {
+    --bs-primary-rgb: 52, 152, 219;
 }
 
 /* ========== Commun : header (A) ========== */

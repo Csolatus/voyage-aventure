@@ -139,7 +139,7 @@ Tout le CSS personnalisé est dans `css/custom.css`. Lignes de code par section 
 
 | Section | Lignes | Contenu |
 |---|---|---|
-| Variables + surcharge Bootstrap | 42 | Palette `--va-*`, couleurs `--bs-*`, boutons |
+| Variables + surcharge Bootstrap | 45 | Palette `--va-*`, couleurs `--bs-*`, boutons, bleu clair sur fond sombre |
 | Commun : header | 9 | Fond des liens de la navbar au survol / actif |
 | Commun : footer | 0 | — |
 | Commun : bandeaux de page | 3 | Couleur `bg-dark-alt` (À propos, Destinations, Contact) |
@@ -153,15 +153,17 @@ Tout le CSS personnalisé est dans `css/custom.css`. Lignes de code par section 
 
 **Optimisation (MR #8)** : `css/styles.css` (537 lignes, plus chargé par aucune page) a été supprimé. Les styles utilisés par plusieurs pages, auparavant écrits en double, sont regroupés dans les sections « Commun ».
 
-**Pourquoi surcharger les couleurs de Bootstrap ?** Par défaut, `btn-primary` ou `text-primary` utilisent le bleu de Bootstrap (`#0d6efd`), et non celui du site (`#3498db`). Redéfinir `--bs-primary`, `--bs-danger`, `--bs-success`, `--bs-dark` (et leur version `-rgb`) permet de garder la charte d'origine avec les classes Bootstrap standard. Les boutons ayant leurs propres variables (`--bs-btn-bg`…), ils sont surchargés à part.
+**Pourquoi surcharger les couleurs de Bootstrap ?** Par défaut, `btn-primary` ou `text-primary` utilisent le bleu de Bootstrap (`#0d6efd`), et non celui du site. Redéfinir `--bs-primary`, `--bs-danger`, `--bs-success`, `--bs-dark` (et leur version `-rgb`) permet de garder la charte d'origine avec les classes Bootstrap standard. Les boutons ayant leurs propres variables (`--bs-btn-bg`…), ils sont surchargés à part.
 
 | Variable | Couleur | Utilisée par |
 |---|---|---|
 | `--va-dark` | `#2c3e50` | `bg-dark`, `text-dark` : navbar, footer, titres |
 | `--va-dark-alt` | `#34495e` | `bg-dark-alt` : bandeaux de titre |
-| `--va-primary` | `#3498db` | `btn-primary`, `text-primary`, liens |
-| `--va-danger` | `#e74c3c` | `btn-danger`, badges de prix |
-| `--va-success` | `#27ae60` | `btn-success` : envoi du formulaire |
+| `--va-primary` | `#2077b2` | `btn-primary`, `text-primary`, liens |
+| `--va-danger` | `#da2d1b` | `btn-danger`, badges de prix |
+| `--va-success` | `#1d8248` | `btn-success` : envoi du formulaire |
+
+**Contraste (phase 3)** : les couleurs d'origine (`#3498db`, `#e74c3c`, `#27ae60`) n'atteignaient pas le ratio de 4.5:1 exigé par les WCAG pour du texte (de 2.9:1 à 3.8:1 avec le blanc). Elles ont été assombries en gardant la même teinte, pour dépasser 4.5:1 sur fond blanc et sur fond gris clair (`bg-body-tertiary`). Sur fond sombre (`.bg-dark`, section chiffres de la page À propos), `text-primary` reprend le bleu d'origine, plus lisible sur `--va-dark`.
 
 ## 6. JavaScript
 
