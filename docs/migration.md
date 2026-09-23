@@ -20,6 +20,8 @@ Le site VoyageAventure (4 pages : Accueil, Destinations, À propos, Contact) ét
 | #5 | `feat/footer` | Footer en grille | B |
 | #6 | `feat/destinations` | Filtres, grille de cards, modal de détails | B |
 | #7 | `feat/contact` | Formulaire, validation, alert, présélection de destination | B |
+| #8 | `refactor/optimisation-css` | Suppression de `styles.css`, styles partagés regroupés en sections « Commun » | A |
+| #9 | `docs/migration` | Documentation de la migration | B |
 
 Convention : chaque MR est relue par l'autre développeur avant le merge sur `main`.
 
@@ -64,7 +66,7 @@ Convention : chaque MR est relue par l'autre développeur avant le merge sur `ma
 | `.section-title` | `h2.text-center.fw-bold.mb-5` |
 
 - **Composant JS Bootstrap** : carousel, entièrement déclaratif (`data-bs-ride`, `data-bs-slide`) : aucun JS écrit.
-- **CSS personnalisé** : le dégradé du hero, et l'effet de survol des cards services (bordure bleue et léger soulèvement).
+- **CSS personnalisé** : le dégradé du hero et la bordure bleue des cards services au survol. Le léger soulèvement est dans la section commune « cartes animées au survol ».
 
 ### Destinations (`destinations.html`) — développeur B
 
@@ -80,7 +82,7 @@ Convention : chaque MR est relue par l'autre développeur avant le merge sur `ma
 
 - **Composant JS Bootstrap** : modal.
 - **JS écrit** : filtrage par continent et remplissage du modal (voir section 6).
-- **CSS personnalisé** : le soulèvement des cards au survol.
+- **CSS personnalisé** : aucun dans sa section ; le soulèvement des cards au survol est dans la section commune « cartes animées au survol ».
 
 ### À propos (`apropos.html`) — développeur A
 
@@ -92,6 +94,7 @@ Convention : chaque MR est relue par l'autre développeur avant le merge sur `ma
 | `.team-grid` / `.team-member` | Même grille, `.card.border-0` |
 | `.stats-grid` / `.stat-number` | `.row.row-cols-md-2` avec `.progress` + `.progress-bar` et chiffre en `.display-6` |
 
+- Le bandeau de titre utilise `.bg-dark-alt`, défini dans la section commune « bandeaux de page » (partagé avec Destinations et Contact).
 - La timeline n'existe pas dans Bootstrap. Elle est construite avec `border-start` et quelques lignes de CSS pour les pastilles (`.timeline-item::before`).
 - Les progress bars : « 5000+ voyages » et « 50+ destinations » n'ont pas de maximum naturel. Elles sont donc rapportées à un objectif 2026 (6000 voyages, 75 destinations), indiqué sous la barre.
 
@@ -136,15 +139,19 @@ Tout le CSS personnalisé est dans `css/custom.css`. Lignes de code par section 
 
 | Section | Lignes | Contenu |
 |---|---|---|
-| Variables + surcharge Bootstrap | 43 | Palette `--va-*`, couleurs `--bs-*`, boutons |
+| Variables + surcharge Bootstrap | 42 | Palette `--va-*`, couleurs `--bs-*`, boutons |
 | Commun : header | 9 | Fond des liens de la navbar au survol / actif |
 | Commun : footer | 0 | — |
-| Accueil | 11 | Dégradé du hero, survol des cards services |
-| À propos | 14 | Couleur `bg-dark-alt`, pastilles de la timeline |
-| Destinations | 6 | Survol des cards |
+| Commun : bandeaux de page | 3 | Couleur `bg-dark-alt` (À propos, Destinations, Contact) |
+| Commun : cartes animées au survol | 8 | Soulèvement des cards (Accueil, Destinations) |
+| Accueil | 9 | Dégradé du hero, bordure bleue des cards services au survol |
+| À propos | 11 | Pastilles de la timeline |
+| Destinations | 0 | — |
 | Contact | 0 | — |
 
 **Toutes les pages restent sous les 50 lignes.**
+
+**Optimisation (MR #8)** : `css/styles.css` (537 lignes, plus chargé par aucune page) a été supprimé. Les styles utilisés par plusieurs pages, auparavant écrits en double, sont regroupés dans les sections « Commun ».
 
 **Pourquoi surcharger les couleurs de Bootstrap ?** Par défaut, `btn-primary` ou `text-primary` utilisent le bleu de Bootstrap (`#0d6efd`), et non celui du site (`#3498db`). Redéfinir `--bs-primary`, `--bs-danger`, `--bs-success`, `--bs-dark` (et leur version `-rgb`) permet de garder la charte d'origine avec les classes Bootstrap standard. Les boutons ayant leurs propres variables (`--bs-btn-bg`…), ils sont surchargés à part.
 
@@ -196,4 +203,3 @@ Chaque page est testée à 3 largeurs : mobile **375px**, tablette **768px**, de
 
 - Le formulaire de contact n'envoie rien : il n'y a pas de serveur.
 - Les images sont des emojis, repris du site d'origine.
-- `css/styles.css` n'est plus chargé par aucune page ; sa suppression fait partie de l'optimisation CSS.
