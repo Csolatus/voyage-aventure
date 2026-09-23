@@ -47,7 +47,7 @@
     --bs-btn-focus-shadow-rgb: 52, 152, 219;
 }
 
-/* ========== Commun : header (A) / footer (B) ========== */
+/* ========== Commun : header (A) ========== */
 .navbar .nav-link {
     padding-inline: 1rem;
     border-radius: var(--bs-border-radius);
@@ -57,6 +57,8 @@
 .navbar .nav-link.active {
     background-color: var(--va-dark-alt);
 }
+
+/* ========== Commun : footer (B) ========== */
 
 /* ========== Accueil (A) — max 50 lignes ========== */
 .hero {
