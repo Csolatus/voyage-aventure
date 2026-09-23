@@ -36,6 +36,9 @@ destinationModal.addEventListener('show.bs.modal', (event) => {
     fill('price', card.querySelector('.destination-price').textContent);
     fill('program', button.dataset.program);
 
+    const continent = button.closest('[data-continent]').dataset.continent;
+    destinationModal.querySelector('[data-modal="quote"]').href = `contact.html?destination=${encodeURIComponent(continent)}`;
+
     const includedItems = button.dataset.included.split('|').map((item) => {
         const li = document.createElement('li');
         li.textContent = `✓ ${item}`;
