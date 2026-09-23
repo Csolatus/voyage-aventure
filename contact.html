@@ -6,8 +6,6 @@
     <title>VoyageAventure - Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Temporaire : à délier lors de la migration de chaque page -->
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
@@ -31,96 +29,119 @@
         </nav>
     </header>
 
-    <section class="page-header">
+    <section class="bg-dark-alt text-white text-center py-5">
         <div class="container">
-            <h1 class="page-title">Contactez-nous</h1>
-            <p class="page-subtitle">Nous sommes là pour réaliser vos rêves de voyage</p>
+            <h1 class="display-5 fw-bold mb-2">Contactez-nous</h1>
+            <p class="lead opacity-75 mb-0">Nous sommes là pour réaliser vos rêves de voyage</p>
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="py-5">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Nos coordonnées</h2>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h3>Adresse</h3>
-                            <p>123 Rue des Voyages<br>75001 Paris, France</p>
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h2 class="h3 text-dark mb-4">Nos coordonnées</h2>
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="fs-3" aria-hidden="true">📍</div>
+                        <div>
+                            <h3 class="h6 text-dark mb-1">Adresse</h3>
+                            <address class="mb-0">123 Rue des Voyages<br>75001 Paris, France</address>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-details">
-                            <h3>Téléphone</h3>
-                            <p>01 23 45 67 89</p>
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="fs-3" aria-hidden="true">📞</div>
+                        <div>
+                            <h3 class="h6 text-dark mb-1">Téléphone</h3>
+                            <a href="tel:+33123456789">01 23 45 67 89</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p>info@voyageaventure.fr</p>
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="fs-3" aria-hidden="true">📧</div>
+                        <div>
+                            <h3 class="h6 text-dark mb-1">Email</h3>
+                            <a href="mailto:info@voyageaventure.fr">info@voyageaventure.fr</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🕒</div>
-                        <div class="contact-details">
-                            <h3>Horaires</h3>
-                            <p>Lun-Ven: 9h-18h<br>Sam: 10h-16h</p>
+                    <div class="d-flex gap-3">
+                        <div class="fs-3" aria-hidden="true">🕒</div>
+                        <div>
+                            <h3 class="h6 text-dark mb-1">Horaires</h3>
+                            <p class="mb-0">Lun-Ven : 9h-18h<br>Sam : 10h-16h</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-form-container">
-                    <h2>Envoyez-nous un message</h2>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" name="name" required>
+                <div class="col-lg-7">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <h2 class="h3 text-dark mb-4">Envoyez-nous un message</h2>
+
+                            <div id="contact-success" class="alert alert-success d-none" role="status" tabindex="-1">
+                                Merci pour votre message ! Nous vous répondrons sous 48h.
+                            </div>
+
+                            <form id="contact-form" class="needs-validation row g-3" novalidate>
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Nom complet</label>
+                                    <input type="text" class="form-control" id="name" name="name" autocomplete="name" required>
+                                    <div class="invalid-feedback">Veuillez indiquer votre nom.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Adresse email</label>
+                                    <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                                    <div class="invalid-feedback">Veuillez indiquer une adresse email valide.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Téléphone <span class="text-secondary fw-normal">(facultatif)</span></label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="destination" class="form-label">Destination souhaitée</label>
+                                    <select class="form-select" id="destination" name="destination">
+                                        <option value="">Choisissez une destination</option>
+                                        <option value="europe">Europe</option>
+                                        <option value="asie">Asie</option>
+                                        <option value="amerique">Amérique</option>
+                                        <option value="afrique">Afrique</option>
+                                        <option value="autre">Autre / je ne sais pas encore</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="budget" class="form-label">Budget approximatif</label>
+                                    <select class="form-select" id="budget" name="budget">
+                                        <option value="">Sélectionnez votre budget</option>
+                                        <option value="500-1000">500€ - 1000€</option>
+                                        <option value="1000-2000">1000€ - 2000€</option>
+                                        <option value="2000-3000">2000€ - 3000€</option>
+                                        <option value="3000+">Plus de 3000€</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+                                    <div class="invalid-feedback">Veuillez écrire votre message.</div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="consent" name="consent" required>
+                                        <label class="form-check-label" for="consent">
+                                            J'accepte que mes données soient utilisées pour traiter ma demande
+                                        </label>
+                                        <div class="invalid-feedback">Votre accord est nécessaire pour traiter votre demande.</div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            J'accepte de recevoir des informations sur vos offres
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success px-4">Envoyer le message</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Adresse email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="destination">Destination souhaitée</label>
-                            <select id="destination" name="destination">
-                                <option value="">Choisissez une destination</option>
-                                <option value="europe">Europe</option>
-                                <option value="asie">Asie</option>
-                                <option value="amerique">Amérique</option>
-                                <option value="afrique">Afrique</option>
-                                <option value="oceanie">Océanie</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="budget">Budget approximatif</label>
-                            <select id="budget" name="budget">
-                                <option value="">Sélectionnez votre budget</option>
-                                <option value="500-1000">500€ - 1000€</option>
-                                <option value="1000-2000">1000€ - 2000€</option>
-                                <option value="2000-3000">2000€ - 3000€</option>
-                                <option value="3000+">Plus de 3000€</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" required>
-                                J'accepte de recevoir des informations sur vos offres
-                            </label>
-                        </div>
-                        <button type="submit" class="submit-button">Envoyer le message</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,5 +165,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
