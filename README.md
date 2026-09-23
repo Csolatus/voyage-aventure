@@ -8,6 +8,8 @@ Documentation de la migration vers Bootstrap : [docs/migration.md](docs/migratio
 ### Bootstrap
 - Bootstrap **5.3.3** via CDN jsDelivr : CSS dans le `<head>`, `bootstrap.bundle.min.js` (inclut Popper) juste avant `</body>`.
 - Pas de jQuery.
+- Icônes : Bootstrap Icons 1.11.3 (CDN). Polices : Fraunces (titres) et Work Sans (texte), via Google Fonts.
+- Photos dans `img/`, sous licence CC0 (crédits dans `docs/migration.md`).
 
 ### CSS
 - `css/custom.css` : variables de la palette (`--va-*`) et surcharge des couleurs Bootstrap (`--bs-primary`, `.btn-primary`…).
@@ -17,11 +19,12 @@ Documentation de la migration vers Bootstrap : [docs/migration.md](docs/migratio
 
 | Variable | Couleur | Usage |
 |---|---|---|
-| `--va-dark` | `#2c3e50` | Header, footer, titres (`bg-dark`, `text-dark`) |
-| `--va-dark-alt` | `#34495e` | Bandeaux de page |
-| `--va-primary` | `#2077b2` | Boutons et liens (`btn-primary`, `text-primary`) |
-| `--va-danger` | `#da2d1b` | CTA, prix (`btn-danger`, `text-danger`) |
-| `--va-success` | `#1d8248` | Envoi du formulaire (`btn-success`) |
+| `--va-cream` | `#f5efe4` | Fond des pages |
+| `--va-paper` | `#fbf8f2` | Cards, sections alternées (`bg-body-tertiary`) |
+| `--va-ink` | `#1f2a24` | Texte |
+| `--va-green` | `#1f4d3f` | Boutons et liens (`btn-primary`, `text-primary`) |
+| `--va-green-dark` | `#16302a` | Footer, chiffres clés (`bg-dark`) |
+| `--va-terracotta` | `#a8492a` | Accent : CTA, prix, surtitres (`btn-danger`, `text-danger`) |
 
 ### JavaScript
 - Un fichier par page : `js/<page>.js`, chargé après le bundle Bootstrap.

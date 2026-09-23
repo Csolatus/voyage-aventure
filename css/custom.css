@@ -1,108 +1,123 @@
-/* ========== Variables (palette VoyageAventure) ========== */
-/* Couleurs assombries pour un contraste d'au moins 4.5:1 avec le blanc (WCAG AA) */
+/* ========== Variables (palette « Carnet de voyage ») ========== */
+/* Contrastes vérifiés : tout texte ≥ 4.5:1 sur son fond (WCAG AA) */
 :root {
-    --va-dark: #2c3e50;
-    --va-dark-alt: #34495e;
-    --va-primary: #2077b2;
-    --va-primary-hover: #1c679b;
-    --va-danger: #da2d1b;
-    --va-danger-hover: #be2718;
-    --va-success: #1d8248;
-    --va-success-hover: #19713f;
+    --va-cream: #f5efe4;
+    --va-paper: #fbf8f2;
+    --va-line: #ddd3c2;
+    --va-ink: #1f2a24;
+    --va-muted: #595e56;
+    --va-green: #1f4d3f;
+    --va-green-hover: #173a30;
+    --va-green-dark: #16302a;
+    --va-terracotta: #a8492a;
+    --va-terracotta-hover: #8a3b21;
+    --va-serif: "Fraunces", Georgia, serif;
 
-    /* Surcharge Bootstrap : utilitaires text-*, bg-*, border-*, liens */
-    --bs-primary: var(--va-primary);
-    --bs-primary-rgb: 32, 119, 178;
-    --bs-danger: var(--va-danger);
-    --bs-danger-rgb: 218, 45, 27;
-    --bs-success: var(--va-success);
-    --bs-success-rgb: 29, 130, 72;
-    --bs-dark: var(--va-dark);
-    --bs-dark-rgb: 44, 62, 80;
-    --bs-link-color: var(--va-primary);
-    --bs-link-color-rgb: 32, 119, 178;
-    --bs-link-hover-color: var(--va-primary-hover);
-    --bs-link-hover-color-rgb: 28, 103, 155;
+    /* Surcharge Bootstrap : typographie, fonds, bordures */
+    --bs-body-font-family: "Work Sans", system-ui, sans-serif;
+    --bs-body-bg: var(--va-cream);
+    --bs-body-bg-rgb: 245, 239, 228;
+    --bs-body-color: var(--va-ink);
+    --bs-body-color-rgb: 31, 42, 36;
+    --bs-secondary-color: var(--va-muted);
+    --bs-tertiary-bg: var(--va-paper);
+    --bs-tertiary-bg-rgb: 251, 248, 242;
+    --bs-border-color: var(--va-line);
+    --bs-border-radius: 0.25rem;
+
+    /* Surcharge Bootstrap : couleurs des utilitaires text-*, bg-*, border-* et des liens */
+    --bs-primary: var(--va-green);
+    --bs-primary-rgb: 31, 77, 63;
+    --bs-danger: var(--va-terracotta);
+    --bs-danger-rgb: 168, 73, 42;
+    --bs-dark: var(--va-green-dark);
+    --bs-dark-rgb: 22, 48, 42;
+    --bs-link-color: var(--va-green);
+    --bs-link-color-rgb: 31, 77, 63;
+    --bs-link-hover-color: var(--va-terracotta);
+    --bs-link-hover-color-rgb: 168, 73, 42;
 }
 
 /* Surcharge Bootstrap : boutons (couleurs compilées, non liées à --bs-primary) */
 .btn-primary,
-.btn-danger,
-.btn-success {
+.btn-danger {
     --bs-btn-border-color: var(--bs-btn-bg);
     --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
     --bs-btn-active-bg: var(--bs-btn-hover-bg);
     --bs-btn-active-border-color: var(--bs-btn-hover-bg);
 }
-.btn-primary { --bs-btn-bg: var(--va-primary); --bs-btn-hover-bg: var(--va-primary-hover); --bs-btn-focus-shadow-rgb: 32, 119, 178; }
-.btn-danger { --bs-btn-bg: var(--va-danger); --bs-btn-hover-bg: var(--va-danger-hover); --bs-btn-focus-shadow-rgb: 218, 45, 27; }
-.btn-success { --bs-btn-bg: var(--va-success); --bs-btn-hover-bg: var(--va-success-hover); --bs-btn-focus-shadow-rgb: 29, 130, 72; }
+.btn-primary { --bs-btn-bg: var(--va-green); --bs-btn-hover-bg: var(--va-green-hover); --bs-btn-focus-shadow-rgb: 31, 77, 63; }
+.btn-danger { --bs-btn-bg: var(--va-terracotta); --bs-btn-hover-bg: var(--va-terracotta-hover); --bs-btn-focus-shadow-rgb: 168, 73, 42; }
 
 .btn-outline-primary {
-    --bs-btn-color: var(--va-primary);
-    --bs-btn-border-color: var(--va-primary);
-    --bs-btn-hover-bg: var(--va-primary);
-    --bs-btn-hover-border-color: var(--va-primary);
-    --bs-btn-active-bg: var(--va-primary);
-    --bs-btn-active-border-color: var(--va-primary);
-    --bs-btn-focus-shadow-rgb: 32, 119, 178;
+    --bs-btn-color: var(--va-green);
+    --bs-btn-border-color: var(--va-green);
+    --bs-btn-hover-bg: var(--va-green);
+    --bs-btn-hover-border-color: var(--va-green);
+    --bs-btn-active-bg: var(--va-green);
+    --bs-btn-active-border-color: var(--va-green);
+    --bs-btn-focus-shadow-rgb: 31, 77, 63;
 }
 
-/* Sur fond sombre, le bleu d'origine (plus clair) reste lisible : 3.5:1 sur --va-dark */
+/* Sur fond sombre, l'accent passe en sable pour rester lisible (9:1) */
 .bg-dark {
-    --bs-primary-rgb: 52, 152, 219;
+    --bs-primary-rgb: 233, 201, 168;
+}
+.bg-dark .progress {
+    --bs-progress-bg: rgba(255, 255, 255, 0.15);
+}
+
+/* ========== Commun : typographie ========== */
+h1, h2, h3, h4, .h1, .h2, .h3, .h4,
+.display-4, .display-5, .display-6, .navbar-brand, .font-serif {
+    font-family: var(--va-serif);
+    font-weight: 500;
+}
+.overline {
+    font-family: var(--bs-body-font-family);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--va-terracotta);
 }
 
 /* ========== Commun : header (A) ========== */
-.navbar .nav-link {
-    padding-inline: 1rem;
-    border-radius: var(--bs-border-radius);
-    transition: background-color 0.3s;
+.navbar {
+    --bs-navbar-color: var(--va-ink);
+    --bs-navbar-hover-color: var(--va-terracotta);
+    --bs-navbar-active-color: var(--va-ink);
+    --bs-navbar-brand-color: var(--va-green);
+    --bs-navbar-brand-hover-color: var(--va-green);
 }
-.navbar .nav-link:hover,
 .navbar .nav-link.active {
-    background-color: var(--va-dark-alt);
+    text-decoration: underline 2px var(--va-terracotta);
+    text-underline-offset: 0.5rem;
 }
 
 /* ========== Commun : footer (B) ========== */
 
-/* ========== Commun : bandeaux de page (À propos, Destinations, Contact) ========== */
-.bg-dark-alt {
-    background-color: var(--va-dark-alt);
-}
-
-/* ========== Commun : cartes animées au survol (Accueil, Destinations) ========== */
-.service-card,
-.destination-card {
-    transition: border-color 0.3s, transform 0.3s;
-}
-.service-card:hover,
-.destination-card:hover {
-    transform: translateY(-5px);
-}
-
 /* ========== Accueil (A) — max 50 lignes ========== */
-.hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-.service-card {
-    border-color: transparent;
-}
-.service-card:hover {
-    border-color: var(--va-primary);
+.step-number {
+    min-width: 2ch;
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* ========== À propos (A) — max 50 lignes ========== */
 .timeline-item::before {
     content: "";
     position: absolute;
-    top: 0.2rem;
-    left: calc(-1.5rem - 9px);
-    width: 15px;
-    height: 15px;
-    border: 3px solid #fff;
+    top: 0.35rem;
+    left: calc(-1.5rem - 7px);
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    background-color: var(--va-primary);
+    background-color: var(--va-terracotta);
+}
+.monogram {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-family: var(--va-serif);
 }
 
 /* ========== Destinations (B) — max 50 lignes ========== */
