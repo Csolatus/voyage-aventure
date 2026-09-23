@@ -19,9 +19,9 @@ Documentation de la migration vers Bootstrap : [docs/migration.md](docs/migratio
 |---|---|---|
 | `--va-dark` | `#2c3e50` | Header, footer, titres (`bg-dark`, `text-dark`) |
 | `--va-dark-alt` | `#34495e` | Bandeaux de page |
-| `--va-primary` | `#3498db` | Boutons et liens (`btn-primary`, `text-primary`) |
-| `--va-danger` | `#e74c3c` | CTA, prix (`btn-danger`, `text-danger`) |
-| `--va-success` | `#27ae60` | Envoi du formulaire (`btn-success`) |
+| `--va-primary` | `#2077b2` | Boutons et liens (`btn-primary`, `text-primary`) |
+| `--va-danger` | `#da2d1b` | CTA, prix (`btn-danger`, `text-danger`) |
+| `--va-success` | `#1d8248` | Envoi du formulaire (`btn-success`) |
 
 ### JavaScript
 - Un fichier par page : `js/<page>.js`, chargé après le bundle Bootstrap.
