@@ -1,0 +1,58 @@
+/* ========== Variables (palette VoyageAventure) ========== */
+:root {
+    --va-dark: #2c3e50;
+    --va-dark-alt: #34495e;
+    --va-primary: #3498db;
+    --va-primary-hover: #2980b9;
+    --va-danger: #e74c3c;
+    --va-danger-hover: #c0392b;
+    --va-success: #27ae60;
+    --va-success-hover: #219a52;
+
+    /* Surcharge Bootstrap : utilitaires text-*, bg-*, border-*, liens */
+    --bs-primary: var(--va-primary);
+    --bs-primary-rgb: 52, 152, 219;
+    --bs-danger: var(--va-danger);
+    --bs-danger-rgb: 231, 76, 60;
+    --bs-success: var(--va-success);
+    --bs-success-rgb: 39, 174, 96;
+    --bs-dark: var(--va-dark);
+    --bs-dark-rgb: 44, 62, 80;
+    --bs-link-color: var(--va-primary);
+    --bs-link-color-rgb: 52, 152, 219;
+    --bs-link-hover-color: var(--va-primary-hover);
+    --bs-link-hover-color-rgb: 41, 128, 185;
+}
+
+/* Surcharge Bootstrap : boutons (couleurs compilées, non liées à --bs-primary) */
+.btn-primary,
+.btn-danger,
+.btn-success {
+    --bs-btn-border-color: var(--bs-btn-bg);
+    --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+    --bs-btn-active-bg: var(--bs-btn-hover-bg);
+    --bs-btn-active-border-color: var(--bs-btn-hover-bg);
+}
+.btn-primary { --bs-btn-bg: var(--va-primary); --bs-btn-hover-bg: var(--va-primary-hover); --bs-btn-focus-shadow-rgb: 52, 152, 219; }
+.btn-danger { --bs-btn-bg: var(--va-danger); --bs-btn-hover-bg: var(--va-danger-hover); --bs-btn-focus-shadow-rgb: 231, 76, 60; }
+.btn-success { --bs-btn-bg: var(--va-success); --bs-btn-hover-bg: var(--va-success-hover); --bs-btn-focus-shadow-rgb: 39, 174, 96; }
+
+.btn-outline-primary {
+    --bs-btn-color: var(--va-primary);
+    --bs-btn-border-color: var(--va-primary);
+    --bs-btn-hover-bg: var(--va-primary);
+    --bs-btn-hover-border-color: var(--va-primary);
+    --bs-btn-active-bg: var(--va-primary);
+    --bs-btn-active-border-color: var(--va-primary);
+    --bs-btn-focus-shadow-rgb: 52, 152, 219;
+}
+
+/* ========== Commun : header (A) / footer (B) ========== */
+
+/* ========== Accueil (A) — max 50 lignes ========== */
+
+/* ========== À propos (A) — max 50 lignes ========== */
+
+/* ========== Destinations (B) — max 50 lignes ========== */
+
+/* ========== Contact (B) — max 50 lignes ========== */
