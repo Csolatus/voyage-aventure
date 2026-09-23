@@ -10,8 +10,8 @@ projet scolaire
 ### CSS
 - `css/custom.css` : variables de la palette (`--va-*`) et surcharge des couleurs Bootstrap (`--bs-primary`, `.btn-primary`…).
 - Une section commentée par page, chacune gérée par son développeur : **50 lignes max par page**.
-- Ordre de chargement : `bootstrap.min.css` → `styles.css` → `custom.css`.
-- `css/styles.css` est l'ancien CSS, conservé pendant la transition. Chacun le délie de sa page une fois migrée, puis il sera supprimé.
+- Ordre de chargement : `bootstrap.min.css` → `custom.css`.
+- Les styles partagés par plusieurs pages (bandeaux, cartes au survol) sont dans les sections « Commun ».
 
 | Variable | Couleur | Usage |
 |---|---|---|
