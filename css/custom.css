@@ -48,6 +48,15 @@
 }
 
 /* ========== Commun : header (A) / footer (B) ========== */
+.navbar .nav-link {
+    padding-inline: 1rem;
+    border-radius: var(--bs-border-radius);
+    transition: background-color 0.3s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background-color: var(--va-dark-alt);
+}
 
 /* ========== Accueil (A) — max 50 lignes ========== */
 
