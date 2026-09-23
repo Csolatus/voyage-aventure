@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoyageAventure - Destinations</title>
+    <meta name="description" content="Six voyages proposés par VoyageAventure : Paris, Tokyo, New York, Kenya, Rome et Bali.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
+          integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231f4d3f'/><text x='50' y='72' font-family='Georgia,serif' font-size='66' text-anchor='middle' fill='%23f5efe4'>V</text></svg>">
 </head>
 <body>
-    <header class="sticky-top">
-        <nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+    <header class="sticky-top bg-body border-bottom">
+        <nav class="navbar navbar-expand-md py-3">
             <div class="container">
-                <a class="navbar-brand fs-3 fw-bold" href="index.html"><span aria-hidden="true">🌍</span> VoyageAventure</a>
+                <a class="navbar-brand fs-3" href="index.html">VoyageAventure</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-principale"
                         aria-controls="navbar-principale" aria-expanded="false" aria-label="Afficher la navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,127 +35,145 @@
             </div>
         </nav>
     </header>
-
-    <section class="bg-dark-alt text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-5 fw-bold mb-2">Nos destinations</h1>
-            <p class="lead opacity-75 mb-0">Explorez les merveilles du monde</p>
+    <section class="border-bottom py-5">
+        <div class="container py-lg-4">
+            <p class="overline mb-2">Destinations</p>
+            <h1 class="display-5 mb-3">Six voyages, de Paris à Bali</h1>
+            <p class="lead text-body-secondary col-lg-8 mb-0">Filtrez par continent, puis ouvrez une fiche pour découvrir le programme et ce qui est inclus.</p>
         </div>
     </section>
 
     <section class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="h5 mb-3">Filtrer par continent</h2>
-                <div class="btn-group flex-wrap" role="group" aria-label="Filtrer par continent">
-                    <button type="button" class="btn btn-outline-primary active" data-filter="all" aria-pressed="true">Tous</button>
-                    <button type="button" class="btn btn-outline-primary" data-filter="europe" aria-pressed="false">Europe</button>
-                    <button type="button" class="btn btn-outline-primary" data-filter="asie" aria-pressed="false">Asie</button>
-                    <button type="button" class="btn btn-outline-primary" data-filter="amerique" aria-pressed="false">Amérique</button>
-                    <button type="button" class="btn btn-outline-primary" data-filter="afrique" aria-pressed="false">Afrique</button>
+            <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                <span id="filtre-label" class="small text-body-secondary">Filtrer par continent</span>
+                <div class="btn-group flex-wrap" role="group" aria-labelledby="filtre-label">
+                    <button type="button" class="btn btn-outline-primary btn-sm active" data-filter="all" aria-pressed="true">Tous</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-filter="europe" aria-pressed="false">Europe</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-filter="asie" aria-pressed="false">Asie</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-filter="amerique" aria-pressed="false">Amérique</button>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-filter="afrique" aria-pressed="false">Afrique</button>
                 </div>
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col" data-continent="europe">
-                    <article class="card destination-card h-100 shadow-sm border-0">
-                        <div class="destination-emoji card-img-top display-3 text-center py-4 bg-body-tertiary" aria-hidden="true">🏰</div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h4 text-dark">Paris, France</h3>
-                            <p class="card-text text-secondary">La ville lumière vous attend</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="destination-duration badge text-bg-secondary">7 jours</span>
-                                <span class="destination-price badge text-bg-danger fs-6">À partir de 599€</span>
+                    <article class="card h-100 bg-body-tertiary">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/paris.jpg" class="card-img-top object-fit-cover" alt="Immeubles haussmanniens et toits de Paris au coucher du soleil" loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <p class="overline mb-2">Europe</p>
+                            <h2 class="card-title h4">Paris, France</h2>
+                            <p class="card-text text-body-secondary">La ville lumière vous attend</p>
+                            <div class="d-flex justify-content-between align-items-baseline mb-4">
+                                <span class="destination-duration badge border text-body-secondary fw-normal">7 jours</span>
+                                <span class="destination-price fw-semibold text-danger">À partir de 599 €</span>
                             </div>
-                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#destinationModal"
-                                    aria-label="Voir détails : Paris, France"
+                            <button type="button" class="btn btn-outline-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#destinationModal"
+                                    aria-label="Voir le programme : Paris, France"
                                     data-program="Tour Eiffel, Louvre et Montmartre, une croisière sur la Seine et une journée au château de Versailles."
-                                    data-included="Hôtel 3★ en centre-ville|Pass musées 4 jours|Croisière sur la Seine">Voir détails</button>
+                                    data-included="Hôtel 3★ en centre-ville|Pass musées 4 jours|Croisière sur la Seine">Voir le programme</button>
                         </div>
                     </article>
                 </div>
                 <div class="col" data-continent="asie">
-                    <article class="card destination-card h-100 shadow-sm border-0">
-                        <div class="destination-emoji card-img-top display-3 text-center py-4 bg-body-tertiary" aria-hidden="true">🏯</div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h4 text-dark">Tokyo, Japon</h3>
-                            <p class="card-text text-secondary">Tradition et modernité</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="destination-duration badge text-bg-secondary">10 jours</span>
-                                <span class="destination-price badge text-bg-danger fs-6">À partir de 1299€</span>
+                    <article class="card h-100 bg-body-tertiary">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/tokyo.jpg" class="card-img-top object-fit-cover" alt="Rue de Tokyo la nuit, bordée d&#x27;enseignes lumineuses" loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <p class="overline mb-2">Asie</p>
+                            <h2 class="card-title h4">Tokyo, Japon</h2>
+                            <p class="card-text text-body-secondary">Tradition et modernité</p>
+                            <div class="d-flex justify-content-between align-items-baseline mb-4">
+                                <span class="destination-duration badge border text-body-secondary fw-normal">10 jours</span>
+                                <span class="destination-price fw-semibold text-danger">À partir de 1 299 €</span>
                             </div>
-                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#destinationModal"
-                                    aria-label="Voir détails : Tokyo, Japon"
+                            <button type="button" class="btn btn-outline-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#destinationModal"
+                                    aria-label="Voir le programme : Tokyo, Japon"
                                     data-program="De Shibuya à Asakusa, puis Kyoto en Shinkansen pour ses temples et ses jardins zen."
-                                    data-included="Vols aller-retour|Japan Rail Pass 7 jours|Une nuit en ryokan traditionnel">Voir détails</button>
+                                    data-included="Vols aller-retour|Japan Rail Pass 7 jours|Une nuit en ryokan traditionnel">Voir le programme</button>
                         </div>
                     </article>
                 </div>
                 <div class="col" data-continent="amerique">
-                    <article class="card destination-card h-100 shadow-sm border-0">
-                        <div class="destination-emoji card-img-top display-3 text-center py-4 bg-body-tertiary" aria-hidden="true">🗽</div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h4 text-dark">New York, USA</h3>
-                            <p class="card-text text-secondary">La ville qui ne dort jamais</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="destination-duration badge text-bg-secondary">5 jours</span>
-                                <span class="destination-price badge text-bg-danger fs-6">À partir de 899€</span>
+                    <article class="card h-100 bg-body-tertiary">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/new-york.jpg" class="card-img-top object-fit-cover" alt="Taxis jaunes et vapeur dans une rue de Manhattan" loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <p class="overline mb-2">Amérique</p>
+                            <h2 class="card-title h4">New York, USA</h2>
+                            <p class="card-text text-body-secondary">La ville qui ne dort jamais</p>
+                            <div class="d-flex justify-content-between align-items-baseline mb-4">
+                                <span class="destination-duration badge border text-body-secondary fw-normal">5 jours</span>
+                                <span class="destination-price fw-semibold text-danger">À partir de 899 €</span>
                             </div>
-                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#destinationModal"
-                                    aria-label="Voir détails : New York, USA"
+                            <button type="button" class="btn btn-outline-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#destinationModal"
+                                    aria-label="Voir le programme : New York, USA"
                                     data-program="Manhattan, Central Park, la statue de la Liberté et une soirée à Broadway."
-                                    data-included="Hôtel à Manhattan|CityPASS 5 attractions|Transferts aéroport">Voir détails</button>
+                                    data-included="Hôtel à Manhattan|CityPASS 5 attractions|Transferts aéroport">Voir le programme</button>
                         </div>
                     </article>
                 </div>
                 <div class="col" data-continent="afrique">
-                    <article class="card destination-card h-100 shadow-sm border-0">
-                        <div class="destination-emoji card-img-top display-3 text-center py-4 bg-body-tertiary" aria-hidden="true">🦁</div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h4 text-dark">Safari Kenya</h3>
-                            <p class="card-text text-secondary">Au cœur de la savane</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="destination-duration badge text-bg-secondary">12 jours</span>
-                                <span class="destination-price badge text-bg-danger fs-6">À partir de 1899€</span>
+                    <article class="card h-100 bg-body-tertiary">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/kenya.jpg" class="card-img-top object-fit-cover" alt="Deux éléphants observés depuis un 4x4 de safari" loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <p class="overline mb-2">Afrique</p>
+                            <h2 class="card-title h4">Safari Kenya</h2>
+                            <p class="card-text text-body-secondary">Au cœur de la savane</p>
+                            <div class="d-flex justify-content-between align-items-baseline mb-4">
+                                <span class="destination-duration badge border text-body-secondary fw-normal">12 jours</span>
+                                <span class="destination-price fw-semibold text-danger">À partir de 1 899 €</span>
                             </div>
-                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#destinationModal"
-                                    aria-label="Voir détails : Safari Kenya"
+                            <button type="button" class="btn btn-outline-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#destinationModal"
+                                    aria-label="Voir le programme : Safari Kenya"
                                     data-program="Safaris au Masai Mara et à Amboseli face au Kilimandjaro, puis détente sur la côte à Mombasa."
-                                    data-included="Lodges et camps de toile|Safaris en 4x4 avec guide|Pension complète">Voir détails</button>
+                                    data-included="Lodges et camps de toile|Safaris en 4x4 avec guide|Pension complète">Voir le programme</button>
                         </div>
                     </article>
                 </div>
                 <div class="col" data-continent="europe">
-                    <article class="card destination-card h-100 shadow-sm border-0">
-                        <div class="destination-emoji card-img-top display-3 text-center py-4 bg-body-tertiary" aria-hidden="true">🏛️</div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h4 text-dark">Rome, Italie</h3>
-                            <p class="card-text text-secondary">La ville éternelle</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="destination-duration badge text-bg-secondary">6 jours</span>
-                                <span class="destination-price badge text-bg-danger fs-6">À partir de 499€</span>
+                    <article class="card h-100 bg-body-tertiary">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/rome.jpg" class="card-img-top object-fit-cover" alt="Le Colisée de Rome sous un ciel bleu" loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <p class="overline mb-2">Europe</p>
+                            <h2 class="card-title h4">Rome, Italie</h2>
+                            <p class="card-text text-body-secondary">La ville éternelle</p>
+                            <div class="d-flex justify-content-between align-items-baseline mb-4">
+                                <span class="destination-duration badge border text-body-secondary fw-normal">6 jours</span>
+                                <span class="destination-price fw-semibold text-danger">À partir de 499 €</span>
                             </div>
-                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#destinationModal"
-                                    aria-label="Voir détails : Rome, Italie"
+                            <button type="button" class="btn btn-outline-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#destinationModal"
+                                    aria-label="Voir le programme : Rome, Italie"
                                     data-program="Colisée, Forum romain, Vatican et chapelle Sixtine, sans oublier la dolce vita du Trastevere."
-                                    data-included="Hôtel 3★ près du centre|Visite guidée du Colisée|Entrée coupe-file au Vatican">Voir détails</button>
+                                    data-included="Hôtel 3★ près du centre|Visite guidée du Colisée|Entrée coupe-file au Vatican">Voir le programme</button>
                         </div>
                     </article>
                 </div>
                 <div class="col" data-continent="asie">
-                    <article class="card destination-card h-100 shadow-sm border-0">
-                        <div class="destination-emoji card-img-top display-3 text-center py-4 bg-body-tertiary" aria-hidden="true">🕌</div>
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title h4 text-dark">Bali, Indonésie</h3>
-                            <p class="card-text text-secondary">Paradis tropical</p>
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="destination-duration badge text-bg-secondary">14 jours</span>
-                                <span class="destination-price badge text-bg-danger fs-6">À partir de 999€</span>
+                    <article class="card h-100 bg-body-tertiary">
+                        <div class="ratio ratio-4x3">
+                            <img src="img/bali.jpg" class="card-img-top object-fit-cover" alt="Rizières en terrasses au pied des volcans de Bali" loading="lazy">
+                        </div>
+                        <div class="card-body d-flex flex-column p-4">
+                            <p class="overline mb-2">Asie</p>
+                            <h2 class="card-title h4">Bali, Indonésie</h2>
+                            <p class="card-text text-body-secondary">Paradis tropical</p>
+                            <div class="d-flex justify-content-between align-items-baseline mb-4">
+                                <span class="destination-duration badge border text-body-secondary fw-normal">14 jours</span>
+                                <span class="destination-price fw-semibold text-danger">À partir de 999 €</span>
                             </div>
-                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#destinationModal"
-                                    aria-label="Voir détails : Bali, Indonésie"
+                            <button type="button" class="btn btn-outline-primary mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#destinationModal"
+                                    aria-label="Voir le programme : Bali, Indonésie"
                                     data-program="Rizières d&#x27;Ubud, temples de Tanah Lot et d&#x27;Uluwatu, plages de Seminyak et plongée à Amed."
-                                    data-included="Villas avec piscine|Chauffeur privé 5 jours|Cours de cuisine balinaise">Voir détails</button>
+                                    data-included="Villas avec piscine|Chauffeur privé 5 jours|Cours de cuisine balinaise">Voir le programme</button>
                         </div>
                     </article>
                 </div>
@@ -158,44 +182,45 @@
     </section>
 
     <div class="modal fade" id="destinationModal" tabindex="-1" aria-labelledby="destinationModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
+                <div class="ratio ratio-16x9">
+                    <img src="img/paris.jpg" class="object-fit-cover rounded-top" alt="" data-modal="image">
+                </div>
                 <div class="modal-header">
-                    <h2 class="modal-title h4" id="destinationModalLabel">
-                        <span data-modal="emoji" aria-hidden="true"></span> <span data-modal="title"></span>
-                    </h2>
+                    <h2 class="modal-title h3" id="destinationModalLabel" data-modal="title"></h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
                 <div class="modal-body">
                     <p class="lead" data-modal="description"></p>
-                    <div class="d-flex gap-2 mb-4">
-                        <span class="badge text-bg-secondary" data-modal="duration"></span>
-                        <span class="badge text-bg-danger" data-modal="price"></span>
+                    <div class="d-flex align-items-baseline gap-3 mb-4">
+                        <span class="badge border text-body-secondary fw-normal" data-modal="duration"></span>
+                        <span class="fw-semibold text-danger" data-modal="price"></span>
                     </div>
-                    <h3 class="h6 text-uppercase text-secondary">Au programme</h3>
+                    <h3 class="overline">Au programme</h3>
                     <p data-modal="program"></p>
-                    <h3 class="h6 text-uppercase text-secondary">Inclus</h3>
+                    <h3 class="overline">Inclus</h3>
                     <ul class="list-unstyled mb-0" data-modal="included"></ul>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Fermer</button>
                     <a href="contact.html" class="btn btn-danger" data-modal="quote">Demander un devis</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white border-top border-white border-opacity-10 py-5">
         <div class="container">
-            <div class="row gy-3">
+            <div class="row gy-4">
                 <div class="col-md-6">
-                    <h3 class="h5">VoyageAventure</h3>
-                    <p class="mb-0">Votre partenaire voyage depuis 2015</p>
+                    <p class="font-serif fs-4 mb-1">VoyageAventure</p>
+                    <p class="mb-0 opacity-75">Votre partenaire voyage depuis 2015</p>
                 </div>
                 <div class="col-md-6">
-                    <h3 class="h5">Contact</h3>
-                    <p class="mb-1"><span aria-hidden="true">📧</span> <a href="mailto:info@voyageaventure.fr" class="link-light">info@voyageaventure.fr</a></p>
-                    <p class="mb-0"><span aria-hidden="true">📞</span> <a href="tel:+33123456789" class="link-light">01 23 45 67 89</a></p>
+                    <h2 class="h6 text-uppercase mb-3">Contact</h2>
+                    <p class="mb-1"><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:info@voyageaventure.fr" class="link-light">info@voyageaventure.fr</a></p>
+                    <p class="mb-0"><i class="bi bi-telephone me-2" aria-hidden="true"></i><a href="tel:+33123456789" class="link-light">01 23 45 67 89</a></p>
                 </div>
             </div>
         </div>

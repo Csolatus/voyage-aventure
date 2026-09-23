@@ -29,7 +29,7 @@ destinationModal.addEventListener('show.bs.modal', (event) => {
         destinationModal.querySelector(`[data-modal="${name}"]`).textContent = text;
     };
 
-    fill('emoji', card.querySelector('.destination-emoji').textContent);
+    destinationModal.querySelector('[data-modal="image"]').src = card.querySelector('img').src;
     fill('title', card.querySelector('.card-title').textContent);
     fill('description', card.querySelector('.card-text').textContent);
     fill('duration', card.querySelector('.destination-duration').textContent);
@@ -41,7 +41,10 @@ destinationModal.addEventListener('show.bs.modal', (event) => {
 
     const includedItems = button.dataset.included.split('|').map((item) => {
         const li = document.createElement('li');
-        li.textContent = `✓ ${item}`;
+        const icon = document.createElement('i');
+        icon.className = 'bi bi-check2 text-primary me-2';
+        icon.setAttribute('aria-hidden', 'true');
+        li.append(icon, item);
         return li;
     });
     destinationModal.querySelector('[data-modal="included"]').replaceChildren(...includedItems);

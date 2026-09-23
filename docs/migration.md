@@ -139,13 +139,12 @@ Tout le CSS personnalisé est dans `css/custom.css`. Lignes de code par section 
 
 | Section | Lignes | Contenu |
 |---|---|---|
-| Variables + surcharge Bootstrap | 45 | Palette `--va-*`, couleurs `--bs-*`, boutons, bleu clair sur fond sombre |
-| Commun : header | 9 | Fond des liens de la navbar au survol / actif |
+| Variables + surcharge Bootstrap | 59 | Palette `--va-*`, polices, fonds, couleurs `--bs-*`, boutons, accent sable sur fond sombre |
+| Commun : typographie | 13 | Titres en serif (Fraunces), petits surtitres (`.overline`) |
+| Commun : header | 11 | Couleurs des liens de la navbar, soulignement du lien actif |
 | Commun : footer | 0 | — |
-| Commun : bandeaux de page | 3 | Couleur `bg-dark-alt` (À propos, Destinations, Contact) |
-| Commun : cartes animées au survol | 8 | Soulèvement des cards (Accueil, Destinations) |
-| Accueil | 9 | Dégradé du hero, bordure bleue des cards services au survol |
-| À propos | 11 | Pastilles de la timeline |
+| Accueil | 4 | Alignement des numéros des services |
+| À propos | 15 | Pastilles de la timeline, monogrammes de l'équipe |
 | Destinations | 0 | — |
 | Contact | 0 | — |
 
@@ -157,13 +156,42 @@ Tout le CSS personnalisé est dans `css/custom.css`. Lignes de code par section 
 
 | Variable | Couleur | Utilisée par |
 |---|---|---|
-| `--va-dark` | `#2c3e50` | `bg-dark`, `text-dark` : navbar, footer, titres |
-| `--va-dark-alt` | `#34495e` | `bg-dark-alt` : bandeaux de titre |
-| `--va-primary` | `#2077b2` | `btn-primary`, `text-primary`, liens |
-| `--va-danger` | `#da2d1b` | `btn-danger`, badges de prix |
-| `--va-success` | `#1d8248` | `btn-success` : envoi du formulaire |
+| `--va-cream` | `#f5efe4` | Fond des pages (`--bs-body-bg`) |
+| `--va-paper` | `#fbf8f2` | Cards, sections alternées (`bg-body-tertiary`) |
+| `--va-ink` | `#1f2a24` | Texte (`--bs-body-color`) |
+| `--va-muted` | `#595e56` | Texte secondaire (`text-body-secondary`) |
+| `--va-green` | `#1f4d3f` | `btn-primary`, `text-primary`, liens |
+| `--va-green-dark` | `#16302a` | `bg-dark` : footer, chiffres clés |
+| `--va-terracotta` | `#a8492a` | `btn-danger`, prix, surtitres, lien actif |
 
-**Contraste (phase 3)** : les couleurs d'origine (`#3498db`, `#e74c3c`, `#27ae60`) n'atteignaient pas le ratio de 4.5:1 exigé par les WCAG pour du texte (de 2.9:1 à 3.8:1 avec le blanc). Elles ont été assombries en gardant la même teinte, pour dépasser 4.5:1 sur fond blanc et sur fond gris clair (`bg-body-tertiary`). Sur fond sombre (`.bg-dark`, section chiffres de la page À propos), `text-primary` reprend le bleu d'origine, plus lisible sur `--va-dark`.
+**Contraste** : chaque couleur de texte dépasse 4.5:1 sur son fond (WCAG AA) : encre sur crème 13:1, texte secondaire 5.8:1, vert 8.4:1, terracotta 5:1, blanc sur vert 9.6:1. Sur fond sombre (`.bg-dark`), `text-primary` passe en sable (`#e9c9a8`, 9:1).
+
+**La section Variables dépasse 50 lignes**, mais elle est commune au site entier et ne compte pour aucune page en particulier.
+
+### Refonte graphique « Carnet de voyage » (phase 3)
+
+Après la migration, le site gardait l'allure d'un gabarit générique : dégradé violet, emojis à la place des images, tout centré, grilles de 3 cards identiques, ombres et soulèvement au survol partout. La refonte lui donne une identité de guide de voyage imprimé, sans rien retirer de Bootstrap :
+
+- **Typographie** : titres en *Fraunces* (serif), texte en *Work Sans*, chargées depuis Google Fonts et branchées sur `--bs-body-font-family`.
+- **Palette** : fond crème, encre, vert profond et accent terracotta (voir le tableau ci-dessus), à la place des couleurs « Flat UI ».
+- **Images** : 8 vraies photos dans `img/`, redimensionnées pour le web (764 Ko au total). Les cards utilisent `ratio ratio-4x3` + `object-fit-cover`.
+- **Icônes** : [Bootstrap Icons](https://icons.getbootstrap.com/) 1.11.3 (CDN avec SRI) à la place des emojis.
+- **Mises en page variées** : titres alignés à gauche avec un surtitre, hero en deux colonnes, services en liste numérotée, valeurs en colonnes de texte, équipe en monogrammes.
+- **Moins d'effets** : plus de dégradé, d'ombres ni de soulèvement au survol ; des bordures fines et de l'espace à la place.
+- **Carousel** : défilement automatique désactivé (règle WCAG sur le contenu en mouvement), navigation par deux boutons.
+
+Crédits photos : toutes sous licence **CC0** (domaine public), trouvées via [Openverse](https://openverse.org/).
+
+| Fichier | Banque d'images | Lien |
+|---|---|---|
+| `img/hero.jpg` | Stocksnap | [source](https://stocksnap.io/photo/hiking-trekking-5LXBN8H2CQ) |
+| `img/paris.jpg` | Rawpixel | [source](https://www.rawpixel.com/image/5917229/rooftops-paris-free-public-domain-cc0-photo) |
+| `img/tokyo.jpg` | Rawpixel | [source](https://www.rawpixel.com/image/4021501/photo-image-light-people-neon) |
+| `img/new-york.jpg` | Rawpixel | [source](https://www.rawpixel.com/image/8809243/photo-image-steam-smoke-public-domain) |
+| `img/kenya.jpg` | Rawpixel | [source](https://www.rawpixel.com/image/8811899/photo-image-public-domain-person-animal) |
+| `img/rome.jpg` | Rawpixel | [source](https://www.rawpixel.com/image/6035901/photo-image-public-domain-person-free) |
+| `img/bali.jpg` | Rawpixel | [source](https://www.rawpixel.com/image/5968784/rice-paddy-the-morning) |
+| `img/apropos.jpg` | Stocksnap | [source](https://stocksnap.io/photo/map-travel-EJAXI7R4TB) |
 
 ## 6. JavaScript
 
